@@ -77,7 +77,7 @@ export function AssignDriverDialog({ serviceId, trigger, onAssigned }: AssignDri
               No hay conductores disponibles con un vehículo compatible en este momento.
             </div>
           ) : (
-            <Select value={driverId} onValueChange={setDriverId}>
+            <Select value={driverId} onValueChange={(val) => setDriverId(val || '')}>
               <SelectTrigger className="w-full">
                 <SelectValue>
                   {selected ? `${selected.name} — ${selected.vehicle.plate}` : 'Selecciona un conductor'}

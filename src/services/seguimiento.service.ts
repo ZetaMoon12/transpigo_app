@@ -69,12 +69,17 @@ export interface SeguimientoLocation {
 }
 
 export class SeguimientoError extends Error {
+  public readonly code: string;
+  public readonly status: number;
+
   constructor(
-    public readonly code: string,
+    code: string,
     message: string,
-    public readonly status: number,
+    status: number,
   ) {
     super(message);
+    this.code = code;
+    this.status = status;
     this.name = 'SeguimientoError';
   }
 }
